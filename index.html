@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie </title>
+    <style>
+        /* Base Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 16px;
+        }
+
+        /* Top Header Navigation */
+        header {
+            margin-bottom: 24px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        /* Fork and Knife Graphic */
+        .logo-icon {
+            display: inline-flex;
+            flex-direction: row;
+            gap: 2px;
+            margin-right: 6px;
+        }
+
+        .logo-icon::before {
+            content: "🍴";
+            font-size: 16px;
+        }
+
+        .logo-text {
+            font-size: 16px;
+            color: #0000ee;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        /* Horizontal Scrollable Menu Links */
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding-bottom: 8px;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Hide horizontal scrollbar track */
+        nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #444444;
+            font-size: 16px;
+        }
+
+        nav a.active {
+            background-color: #2bb673; /* Vivid Green Button Accent */
+            color: #ffffff;
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        /* Hero Layout Container */
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .tagline {
+            color: #008000; /* Rich Dark Green Text */
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .title {
+            color: #fdb813; /* Golden Yellow Heading */
+            font-size: 32px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .description {
+            font-size: 15px;
+            line-height: 1.4;
+            color: #000000;
+        }
+
+        /* Classic Browser Button Style */
+        .order-btn {
+            align-self: flex-start;
+            background-color: #f0f0f0;
+            color: #000000;
+            border: 1px solid #767676;
+            padding: 4px 10px;
+            font-size: 12px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 2px;
+        }
+
+        .order-btn:active {
+            background-color: #e0e0e0;
+        }
+
+        /* Full Width Image container */
+        .image-container {
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation Interface -->
+    <header>
+        <div class="logo-container">
+            <span class="logo-icon">foodie</span>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#">Dishes</a>
+            <a href="#">About</a>
+            <a href="#">Menu</a>
+            <a href="#">Testimonials</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Body Sections -->
+    <main class="content-wrapper">
+        <div class="tagline">Our Special Dish</div>
+        <h1 class="title">Cheese Burger</h1>
+        <p class="description">
+            Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Sit Natus Dolor Cumque?
+        </p>
+        <button class="order-btn">Order Now</button>
+        
+        <div class="image-container">
+        <img src="../cheese burger.jpg" alt= cheese burger>
+        </div>
+    </main>
+
+</body>
+</html>
