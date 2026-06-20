@@ -1,169 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foodie </title>
-    <style>
-        /* Base Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        body {
-            background-color: #ffffff;
-            color: #000000;
-            padding: 16px;
-        }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #333333;
+      background-color: #ffffff;
+      line-height: 1.6;
 
-        /* Top Header Navigation */
-        header {
-            margin-bottom: 24px;
-        }
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background-color: #ffffff;
+    }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            margin-bottom: 16px;
-        }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      color: #1a202c;
+      letter-spacing: 1px;
+      font-size: 16px;
+    }
 
-        /* Fork and Knife Graphic */
-        .logo-icon {
-            display: inline-flex;
-            flex-direction: row;
-            gap: 2px;
-            margin-right: 6px;
-        }
+    .logo-icon {
+      color: #00bcd4;
+      margin-left: 4px;
+      font-size: 18px;
+    }
 
-        .logo-icon::before {
-            content: "🍴";
-            font-size: 16px;
-        }
+    .hero-section {
+      background-color: #f0f7fd;
+      padding: 60px 20px;
+    }
 
-        .logo-text {
-            font-size: 16px;
-            color: #0000ee;
-            text-decoration: underline;
-            cursor: pointer;
-        }
+    .hero-container {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
 
-        /* Horizontal Scrollable Menu Links */
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            overflow-x: auto;
-            white-space: nowrap;
-            padding-bottom: 8px;
-            -webkit-overflow-scrolling: touch;
-        }
+    .hero-image-container {
+      flex: 0 0 280px;
+      height: 280px;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
 
-        /* Hide horizontal scrollbar track */
-        nav::-webkit-scrollbar {
-            display: none;
-        }
+    .hero-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-        nav a {
-            text-decoration: none;
-            color: #444444;
-            font-size: 16px;
-        }
+    .hero-content {
+      flex: 1;
+    }
 
-        nav a.active {
-            background-color: #2bb673; /* Vivid Green Button Accent */
-            color: #ffffff;
-            padding: 6px 16px;
-            border-radius: 4px;
-            font-weight: 500;
-        }
+    .hero-content .tag {
+      font-size: 14px;
+      color: #6b7280;
+      margin-bottom: 12px;
+      text-transform: lowercase;
+    }
 
-        /* Hero Layout Container */
-        .content-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
+    .hero-content h1 {
+      font-size: 36px;
+      color: #032b5b;
+      font-weight: 800;
+      line-height: 1.2;
+    }
 
-        .tagline {
-            color: #008000; /* Rich Dark Green Text */
-            font-size: 18px;
-            font-weight: 700;
-        }
+    .main-content {
+      max-width: 960px;
+      margin: 60px auto;
+      padding: 0 20px;
+      display: flex;
+      gap: 50px;
+    }
 
-        .title {
-            color: #fdb813; /* Golden Yellow Heading */
-            font-size: 32px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+    .info-column {
+      flex: 1.2;
+    }
 
-        .description {
-            font-size: 15px;
-            line-height: 1.4;
-            color: #000000;
-        }
+    .info-column h2 {
+      font-size: 24px;
+      color: #032b5b;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
 
-        /* Classic Browser Button Style */
-        .order-btn {
-            align-self: flex-start;
-            background-color: #f0f0f0;
-            color: #000000;
-            border: 1px solid #767676;
-            padding: 4px 10px;
-            font-size: 12px;
-            text-transform: uppercase;
-            cursor: pointer;
-            border-radius: 2px;
-        }
+    .info-column p {
+      color: #4a5568;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
 
-        .order-btn:active {
-            background-color: #e0e0e0;
-        }
+    .info-column ul {
+      list-style: none;
+    }
 
-        /* Full Width Image container */
-        .image-container {
-            width: 100%;
-            margin-top: 8px;
-        }
+    .info-column li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 12px;
+      color: #4a5568;
+      font-size: 15px;
+    }
 
-        .image-container img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-    </style>
+    .info-column li::before {
+      content: "•";
+      color: #4a5568;
+      font-size: 18px;
+      position: absolute;
+      left: 0;
+      top: -2px;
+    }
+
+    .form-column {
+      flex: 0.9;
+    }
+
+    .form-card {
+      background-color: #043873;
+      border-radius: 8px;
+      padding: 40px 30px;
+      color: #ffffff;
+    }
+
+    .form-card h3 {
+      font-size: 22px;
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: 700;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 8px;
+      color: #e2e8f0;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      background-color: #ffffff;
+      font-size: 15px;
+      color: #333333;
+    }
+
+    .form-group input:focus {
+      outline: 2px solid #00bcd4;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background-color: #00d2b4;
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      padding: 14px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.2s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #00bfa5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 12px;
+      color: #718096;
+      border-top: 1px solid #edf2f7;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+      .main-content {
+        flex-direction: column;
+        gap: 40px;
+      }
+      .hero-image-container {
+        flex: initial;
+        width: 240px;
+        height: 240px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Header Navigation Interface -->
-    <header>
-        <div class="logo-container">
-        <nav>
-            <a href="#" class="active">Home</a>
-            <a href="#">Dishes</a>
-            <a href="#">About</a>
-            <a href="#">Menu</a>
-            <a href="#">Testimonials</a>
-        </nav>
-    </header>
+  <header>
+    <div class="logo-container">
+      SESSION<span class="logo-icon">💬</span>
+    </div>
+  </header>
 
-    <!-- Main Content Body Sections -->
-    <main class="content-wrapper">
-        <div class="tagline">Our Special Dish</div>
-        <h1 class="title">Cheese Burger</h1>
-        <p class="description">
-            Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Sit Natus Dolor Cumque?
-        </p>
-        <button class="order-btn">Order Now</button>
-        
-        <div class="image-container">
-        <img src="../cheese burger.jpg" alt= cheese burger>
-        </div>
-    </main>
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="hero-image-container">
+        <!-- Placeholder image matching the visual layout context -->
+        <image src="../image.jpg" alt=a girl>
+      
+        <h1>5 Ways to Build a Website on the Cheap</h1>
+      </div>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <div class="info-column">
+      <h2>What's Inside?</h2>
+      <p>Morbi et dolor est. Donec at dolor vehicula, molestie erat non, rutrum tellus. Vestibulum in eros non augue convallis pulvinar. Aliquam erat volutpat. Cras interdum felis at sem pharetra, sed convallis elit auctor. Nulla semper ut ante eu dapibus. Mauris dui orci, pulvinar sit amet ligula vel.</p>
+      <p>Cras interdum felis at sem pharetra, sed convallis elit auctor. Nulla semper ut ante eu dapibus. Mauris dui orci, pulvinar sit amet ligula vel.</p>
+      <ul>
+        <li>Far far away, behind the word mountains, far from the countries Vokalia</li>
+        <li>Far far away, behind the word mountains, far from the countries Vokalia</li>
+        <li>Far far away, behind the word mountains, far from the countries Vokalia</li>
+      </ul>
+    </div>
+
+    <div class="form-column">
+      <div class="form-card">
+        <h3>Send me the ebook!</h3>
+        <form action="#" method="POST" onsubmit="event.preventDefault();">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" required>
+          </div>
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <button type="submit" class="submit-btn">Get Free Widget</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
 
 </body>
 </html>
